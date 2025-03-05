@@ -39,3 +39,24 @@ console.log(typeof bigNumber); // bigint
 console.log(typeof myFunction); // function => actually it is function object.
 console.log(typeof heroes); // object
 console.log(typeof id); // symbol
+
+// ********** Stack and Heap **********
+// Stack (Primitive) and Heap (Non-Primitive)
+// Jab bhi kuch stack memory ke andar store hota hai toh humein uski copy milti hai but jab bhi kuch heap memory mein store hota hai toh humein uska reference milta hai.
+
+let myYoutubeChannel =  "Travel Vlogs";
+let anotherName = myYoutubeChannel; // here we are passing the copy of myYoutubeChannel present in the stack memory.
+console.log(anotherName);
+anotherName = "Chai and Travel";
+console.log(anotherName);
+console.log(myYoutubeChannel);
+
+let user1 = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+let user2 = user1; // here we are passing the reference of user1 present in the heap memory.
+console.log(user2);
+user2.upi = "user@oksbi";
+console.log(user2);
+console.log(user1);
